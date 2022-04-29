@@ -1,56 +1,89 @@
 <section class="container-registrar">
   <article class="article-registrar">
-<h2>Registrarse</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :Tipo_de_Documento %><br />
-    <%= f.select :type_document, options_for_select([["Cedula de ciudadania", "CC"], ["Tarjeta de identidad", "TI"], ["Registro Civil", "RC"]])%>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :document, autofocus: true, placeholder:"Ingrese su # de documento", class:"form-control"%>
-  <div>
-
-  <div class="field">
-    <%= f.text_field :first_name, autofocus: true, placeholder:"Ingrese su 1er nombre", class:"form-control"%>
-  <div>
-
-  <div class="field">
-    <%= f.text_field :second_name, autofocus: true, placeholder:"Ingrese su 2do nombre", class:"form-control"%>
-  <div>
-  
-  <div class="field">
-    <%= f.text_field :first_last_name, autofocus: true, placeholder:"Ingrese su 1er apellido", class:"form-control"%>
-  <div>
-
-  <div class="field">
-    <%= f.text_field :second_last_name, autofocus: true, placeholder:"Ingrese su 2do apellido", class:"form-control"%>
-  <div>
-  
-  <div class="field">
-     <%= f.number_field :phone_number, autofocus: true, placeholder:"Ingrese su telefono", class:"form-control"%>
-  <div>
-  
-  <div class="field">
-     <%= f.email_field :email, autofocus: true, placeholder:"Ingrese su correo", class:"form-control"%>
-  </div>
-
-  <div class="field">
-    <%= f.password_field :password, autofocus: true, placeholder:"Ingrese su contraseña", class:"form-control"%>
-  </div>
-
-  <div class="field">
-    <%= f.password_field :password, autofocus: true, placeholder:"Confirme su contraseña", class:"form-control"%>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Registrarme" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="2">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+          <h2 id="center-text">Registrarse</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div class="field">
+        <%= f.label :Tipo_de_Documento %><br />
+        <%= f.select :type_document, options_for_select([["Cedula de ciudadania", "CC"], ["Tarjeta de identidad", "TI"], ["Registro Civil", "RC"]])%>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+        <%= f.text_field :document, autofocus: true, placeholder:"Ingrese su # de documento", class:"form-control"%>
+        <div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="field">
+        <%= f.text_field :first_name, autofocus: true, placeholder:"Ingrese su 1er nombre", class:"form-control"%>
+        <div>
+      </td>
+      <td>
+        <div class="field">
+        <%= f.text_field :second_name, autofocus: true, placeholder:"Ingrese su 2do nombre", class:"form-control"%>
+        <div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="field">
+        <%= f.text_field :first_last_name, autofocus: true, placeholder:"Ingrese su 1er apellido", class:"form-control"%>
+        <div>
+      </td>
+      <td>
+        <div class="field">
+        <%= f.text_field :second_last_name, autofocus: true, placeholder:"Ingrese su 2do apellido", class:"form-control"%>
+        <div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="field">
+        <%= f.number_field :phone_number, autofocus: true, placeholder:"Ingrese su telefono", class:"form-control"%>
+        <div>
+      </td>
+      <td>
+        <div class="field">
+        <%= f.email_field :email, autofocus: true, placeholder:"Ingrese su correo", class:"form-control"%>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="field">
+        <%= f.password_field :password, autofocus: true, placeholder:"Ingrese su contraseña", class:"form-control"%>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+        <%= f.password_field :password, autofocus: true, placeholder:"Confirme su contraseña", class:"form-control"%>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td  id="center-text">
+        <div class="actions">
+        <%= f.submit "Registrarme" %>
+        </div>
+        <% end %>
+      </td>
+      <td  id="center-text">
+        <%= render "devise/shared/links"  %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </article>
 </section>

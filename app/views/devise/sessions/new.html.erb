@@ -1,5 +1,6 @@
-<section class="Mi_container">
-    <article class="Article_izquierdo">
+<section class="container-fluid">
+  <div class="row">
+    <article class="col-sm-6 Article_izquierdo">
       <h2>Inicio de sesión</h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -10,7 +11,7 @@
         </div>
 
         <div class="field">
-          <%= f.text_field :document, autofocus: true, placeholder:"Ingrese su # de documento", class:"form-control"%>
+         <%= f.text_field :document, autofocus: true,placeholder:"Ingrese su numero de documento", class:"form-control"%>
         </div>
 
         <div class="field">
@@ -32,9 +33,10 @@
         <%= render "devise/shared/links" %>
     </article>
 
-    <article class="Article_Derecho">
+    <article class="col-sm-6 Article_Derecho">
          <%= image_tag "logo.jpg", class:"img"%>
     </article>
+  </div>
 
 </section>
 
