@@ -1,0 +1,19 @@
+<section class="container-contraseña">
+  <article class="article-contraseña">
+<h2>Olvidaste tu contraseña?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+     <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Ingrese su correo", class:"form-control"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Restablecer contraseña"%>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+  </article>
+</section>

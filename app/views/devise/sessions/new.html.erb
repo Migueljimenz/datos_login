@@ -1,0 +1,40 @@
+<section class="Mi_container">
+    <article class="Article_izquierdo">
+      <h2>Inicio de sesión</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="field">
+          <%= f.label :Tipo_de_Documento %><br />
+          <%= f.select :type_document, options_for_select([["Cedula de ciudadania", "CC"], ["Tarjeta de identidad", "TI"], ["Registro Civil", "RC"]])%>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :document, autofocus: true, placeholder:"Ingrese su # de documento", class:"form-control"%>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "current-password",placeholder:"ingrese su contraseña", class:"form-control"%>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :Recuerdame %>
+        </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Iniciar sesión",class:"btn btn-primary" %>
+        </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+    </article>
+
+    <article class="Article_Derecho">
+         <%= image_tag "logo.jpg", class:"img"%>
+    </article>
+
+</section>
+
