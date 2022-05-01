@@ -6,7 +6,35 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
+          has_one_attached :avatar
+
+          after_create_commit :add_default_avatar, on: %i[update]
+          def avatar_thumbnail
+            if avatar.attached?
+              avatar.variant(resize_to_limit: [65, 65]).processed
+            else
+              "/default_profile.webp"
+            end
+          end
+
+          private
+
+          def add_default_avatar
+            unless avatar.attached?
+              avatar.attach(
+                io: File.open(
+                  Rails.root.join(
+                    'app','assets','images','default_profile.webp'
+                  )
+                ),
+                filename: 'default_profile.webp',
+                content_type: 'image/webp'
+              )
+          end   
+        end
+        
+
   after_create :assign_default_role
 
   validate :must_have_a_role, on: :update
