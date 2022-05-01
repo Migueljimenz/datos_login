@@ -1,0 +1,32 @@
+
+.navbar{
+    padding-top: .0rem;
+    padding-bottom: .0rem;
+    margin-bottom: 20px;
+}
+
+#navbar{
+    min-height: 15vh;
+    height: 50px;
+    background-color: green;
+    background-image: none;
+}
+
+.logoNav{
+    margin-left: 50%;
+    height: 70px;
+    width: 70px;
+    
+}
+
+#navbarID{
+    display: flex;
+    justify-content: space-around;
+    margin: 55%;
+    margin-right: 100px;
+}
+
+#imagePerfil{
+    height: 80px;
+    width: 80px;
+}
